@@ -3,28 +3,28 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-# ¼ÒÀÀªºªk³W¸ê®Æ
+# æ¨¡æ“¬çš„æ³•è¦è³‡æ–™
 laws = [
     {
-        "title": "¥æ³q·s¨î-°s¾r¥[­«»@«h",
+        "title": "äº¤é€šæ–°åˆ¶-é…’é§•åŠ é‡ç½°å‰‡",
         "effective_date": "2025-10-01",
-        "summary": "°s¾r»@Áì¥[­¿¡A¨Ã¥[±j¦Q¾P¾r·Ó¾÷¨î¡C"
+        "summary": "é…’é§•ç½°é°åŠ å€ï¼Œä¸¦åŠ å¼·åŠéŠ·é§•ç…§æ©Ÿåˆ¶ã€‚"
     },
     {
-        "title": "¾÷¨®¦w¥ş´U·s³W½d",
+        "title": "æ©Ÿè»Šå®‰å…¨å¸½æ–°è¦ç¯„",
         "effective_date": "2025-11-15",
-        "summary": "¦w¥ş´U»İ²Å¦X·s«¬ CNS ¼Ğ·Ç¡A¹HªÌ³B¥H·s¥x¹ô 600 ¤¸»@Áì¡C"
+        "summary": "å®‰å…¨å¸½éœ€ç¬¦åˆæ–°å‹ CNS æ¨™æº–ï¼Œé•è€…è™•ä»¥æ–°å°å¹£ 600 å…ƒç½°é°ã€‚"
     },
     {
-        "title": "°ê¹D¶W³t·s»@«h",
+        "title": "åœ‹é“è¶…é€Ÿæ–°ç½°å‰‡",
         "effective_date": "2026-01-01",
-        "summary": "¶W³t 40 ¤½¨½¥H¤Wª½±µ¦Q¦©¾r·Ó¡C"
+        "summary": "è¶…é€Ÿ 40 å…¬é‡Œä»¥ä¸Šç›´æ¥åŠæ‰£é§•ç…§ã€‚"
     }
 ]
 
 @app.route("/")
 def home():
-    return "ªk³W¬d¸ß API ¤w±Ò°Ê ?"
+    return "æ³•è¦æŸ¥è©¢ API å·²å•Ÿå‹• âœ…"
 
 @app.route("/laws")
 def get_laws():
@@ -38,4 +38,5 @@ def get_laws():
     return jsonify(upcoming_laws)
 
 if __name__ == "__main__":
+    # Render éƒ¨ç½²å¿…é ˆä½¿ç”¨ host="0.0.0.0"
     app.run(host="0.0.0.0", port=5000)
